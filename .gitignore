@@ -46,7 +46,7 @@ Temporary Items
 /BuildTrick/bin/*
 /BuildTrick/obj/*
 /WebConfigSwap/bin/*
-/*.suo
+*.suo
 # Ignoring web.config because this project is about swapping it out.  No reason for it to be in source control.
 /WebConfigSwap/web.config
-*.suo
+
