@@ -13,4 +13,4 @@ The key is to use *Build Event* which uses *MSBuild* script to *swap one web con
 
 Again, this is just a hack to compensate for web site configuration limitations.  Could use Publish Profiles (but to get transofmations working, must use Web Deploy).  This solultion is more hacky, but does not require Web Deploy.
 
-For yet another hacky solution to Web Site configuration limitations see...
+For yet another hacky solution to Web Site configuration limitations see https://github.com/quipp/visual-studio-web-site-config-transform-hack
