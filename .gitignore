@@ -41,3 +41,8 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Visual Studio Bin and Obj
+/BuildTrick/bin/*
+/BuildTrick/obj/*
+/WebConfig/Swap/bin/*

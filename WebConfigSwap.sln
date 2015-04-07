@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebConfigSwap", "http://localhost:59282", "{F7C15994-D740-47E1-9201-FE254CD46370}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_59282"
+		Debug.AspNetCompiler.PhysicalPath = "WebConfigSwap\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59282\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_59282"
+		Release.AspNetCompiler.PhysicalPath = "WebConfigSwap\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59282\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "WebConfigSwap\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildTrick", "BuildTrick\BuildTrick.csproj", "{2D48EAB9-EDC2-4F14-A4B0-12612185CA21}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		JasonDev|Any CPU = JasonDev|Any CPU
+		Production|Any CPU = Production|Any CPU
+		Staging|Any CPU = Staging|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F7C15994-D740-47E1-9201-FE254CD46370}.JasonDev|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7C15994-D740-47E1-9201-FE254CD46370}.JasonDev|Any CPU.Build.0 = Debug|Any CPU
+		{F7C15994-D740-47E1-9201-FE254CD46370}.Production|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7C15994-D740-47E1-9201-FE254CD46370}.Production|Any CPU.Build.0 = Debug|Any CPU
+		{F7C15994-D740-47E1-9201-FE254CD46370}.Staging|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7C15994-D740-47E1-9201-FE254CD46370}.Staging|Any CPU.Build.0 = Debug|Any CPU
+		{2D48EAB9-EDC2-4F14-A4B0-12612185CA21}.JasonDev|Any CPU.ActiveCfg = JasonDev|Any CPU
+		{2D48EAB9-EDC2-4F14-A4B0-12612185CA21}.JasonDev|Any CPU.Build.0 = JasonDev|Any CPU
+		{2D48EAB9-EDC2-4F14-A4B0-12612185CA21}.Production|Any CPU.ActiveCfg = Production|Any CPU
+		{2D48EAB9-EDC2-4F14-A4B0-12612185CA21}.Production|Any CPU.Build.0 = Production|Any CPU
+		{2D48EAB9-EDC2-4F14-A4B0-12612185CA21}.Staging|Any CPU.ActiveCfg = Staging|Any CPU
+		{2D48EAB9-EDC2-4F14-A4B0-12612185CA21}.Staging|Any CPU.Build.0 = Staging|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

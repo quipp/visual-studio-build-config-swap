@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2D48EAB9-EDC2-4F14-A4B0-12612185CA21}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BuildTrick</RootNamespace>
+    <AssemblyName>BuildTrick</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'JasonDev|AnyCPU'">
+    <OutputPath>bin\JasonDev\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Production|AnyCPU'">
+    <OutputPath>bin\Production\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Staging|AnyCPU'">
+    <OutputPath>bin\Staging\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>@echo off
+
+echo Configuring web.config pre-build event ...
+echo SWAPPING $(SolutionDir)WebConfigSwap\web.config
+echo Config Name = $(ConfigurationName)
+if exist "$(SolutionDir)WebConfigSwap\web.config" del /F / Q "$(SolutionDir)WebConfigSwap\web.config"
+
+if "$(ConfigurationName)" == "JasonDev" goto JUMP_JasonDev
+if "$(ConfigurationName)" == "Production" goto JUMP_Production
+if "$(ConfigurationName)" == "Staging" goto JUMP_Staging
+
+echo No web.config found for configuration $(ConfigurationName). Abort batch.
+exit -1
+goto :end
+
+:JUMP_JasonDev
+copy /Y "$(SolutionDir)WebConfigSwap\web.JasonDev.config" "$(SolutionDir)WebConfigSwap\web.config"
+GOTO end
+
+:JUMP_Production
+copy /Y "$(SolutionDir)WebConfigSwap\web.Production.config" "$(SolutionDir)WebConfigSwap\web.config"
+GOTO end
+
+:JUMP_Staging
+copy /Y "$(SolutionDir)WebConfigSwap\web.Staging.config" "$(SolutionDir)WebConfigSwap\web.config"
+GOTO end
+:end
+echo Pre-build event finished</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
