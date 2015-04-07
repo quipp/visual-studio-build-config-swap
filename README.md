@@ -7,7 +7,7 @@ The is based on a combination of strategies from the following two sites
 http://geekswithblogs.net/SoftwareDoneRight/archive/2010/01/30/how-to-get-pre-build-event-support-for-web-site-projects.aspx
 http://stackoverflow.com/questions/2382826/managing-a-debug-and-release-connection-string
 
-The key is to use *Build Event* which uses *MSBuild* script to *swap one web config into web.config* based on the currently *selected build configuration*.  Another trick is to *reference a library project*, because those support Build Events (Web Sites do NOT).  By adding a reference between the Web Site and library project, the library projects Build Events can be used.
+The key is to use *Build Event* which uses *MSBuild* script to *swap one web config into web.config* based on the currently *selected build configuration*.  Another trick is to include *a library project* in solution, because those support Build Events (Web Sites do NOT).  The library project's Build Events is used to kick off the web.config copy.
 
 **Must Rebuild to ensure the build events happen** (if Build and no change has occured in library project, it won't build and therefore wont perform web config swap).
 
