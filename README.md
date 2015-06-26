@@ -1,3 +1,9 @@
+#  This project is no longer useful - better solution desecribed below :boom:
+
+Visual Studio 2013 added support for unlimited Publish Profiles for Web Sites with Web.config tranforms for each publish profile.  Just create a publish profile for each tranform file, then right-click on the *.pubxml file and select the menu item to Add Config Transform.
+
+# Text below is obsolete! :poop:
+
 # aspnet-website-webconfig-swap
 Trick for getting Visual Studio Web Sites to have unlimited web.config alternatives (pseudo transformations).  By default Web Sites only support one transform file (web.debug.config).  This gets around that.
 
