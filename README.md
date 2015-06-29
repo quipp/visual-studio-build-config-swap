@@ -7,8 +7,8 @@ Visual Studio 2013 added support for unlimited Publish Profiles for Web Sites wi
 This was tested with Visual Stuidio 2013 (& 2010 a few years ago).
 
 The is based on a combination of strategies from the following two sites
-http://geekswithblogs.net/SoftwareDoneRight/archive/2010/01/30/how-to-get-pre-build-event-support-for-web-site-projects.aspx
-http://stackoverflow.com/questions/2382826/managing-a-debug-and-release-connection-string
+* http://geekswithblogs.net/SoftwareDoneRight/archive/2010/01/30/how-to-get-pre-build-event-support-for-web-site-projects.aspx
+* http://stackoverflow.com/questions/2382826/managing-a-debug-and-release-connection-string
 
 The key is to use *Build Event* which uses *MSBuild* script to *swap one web config into web.config* based on the currently *selected build configuration*.  Another trick is to include *a library project* in solution, because those support Build Events (Web Sites do NOT).  The library project's Build Events is used to kick off the web.config copy.
 
