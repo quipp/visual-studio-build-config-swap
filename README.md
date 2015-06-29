@@ -1,13 +1,11 @@
-#  This project is no longer useful - better solution desecribed below :boom:
-
 Visual Studio 2013 added support for unlimited Publish Profiles for Web Sites with Web.config tranforms for each publish profile.  Just create a publish profile for each tranform file, then right-click on the *.pubxml file and select the menu item to Add Config Transform.
 
-# Text below is obsolete! :poop:
+This strategy can still be useful for WinForm's applications (non-Web projects).
 
-# aspnet-website-webconfig-swap
-Trick for getting Visual Studio Web Sites to have unlimited web.config alternatives (pseudo transformations).  By default Web Sites only support one transform file (web.debug.config).  This gets around that.
+# Visual Studio Build Config Swap
+Trick for getting Visual Studio projects to swap configuration files based on selected Build.
 
-This was tested with only Visual Stuidio 2013.
+This was tested with Visual Stuidio 2013 (& 2010 a few years ago).
 
 The is based on a combination of strategies from the following two sites
 http://geekswithblogs.net/SoftwareDoneRight/archive/2010/01/30/how-to-get-pre-build-event-support-for-web-site-projects.aspx
@@ -17,6 +15,3 @@ The key is to use *Build Event* which uses *MSBuild* script to *swap one web con
 
 **Must Rebuild to ensure the build events happen** (if Build and no change has occured in library project, it won't build and therefore wont perform web config swap).
 
-Again, this is just a hack to compensate for web site configuration limitations.  Could use Publish Profiles (but to get transofmations working, must use Web Deploy).  This solultion is more hacky, but does not require Web Deploy.
-
-For yet another hacky solution to Web Site configuration limitations see https://github.com/quipp/visual-studio-web-site-config-transform-hack
