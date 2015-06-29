@@ -1,9 +1,8 @@
-Visual Studio 2013 added support for unlimited Publish Profiles for Web Sites with Web.config tranforms for each publish profile.  Just create a publish profile for each tranform file, then right-click on the *.pubxml file and select the menu item to Add Config Transform.
-
-This strategy can still be useful for WinForm's applications (non-Web projects).
-
 # Visual Studio Build Config Swap
-Trick for getting Visual Studio projects to swap configuration files based on selected Build.
+
+Trick for getting Visual Studio projects to swap configuration files based on selected Build.  This strategy is  useful for non-Web Projects - because they don't have a good system for this yet in VS 2013.  However, a better solution would be to use a Build tool like Grunt or Gulp - which is what's encouraged for VS 2015.
+
+Visual Studio 2013 added support for unlimited Publish Profiles for Web Sites with Web.config tranforms for each publish profile.  Just create a publish profile for each tranform file, then right-click on the *.pubxml file and select the menu item to Add Config Transform.  This strategy can still be useful for WinForm's applications (non-Web projects).
 
 This was tested with Visual Stuidio 2013 (& 2010 a few years ago).
 
